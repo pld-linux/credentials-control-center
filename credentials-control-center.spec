@@ -2,12 +2,12 @@
 # Conditional build:
 %bcond_without	static_libs	# static library
 %bcond_with	gnome_cc	# GNOME Control Center panel module (needs Ubuntu patch)
-#
+
 Summary:	Ubuntu Online Accounts configuration panel
 Summary(pl.UTF-8):	Panel konfiguracyjny Ubuntu Online Accounts
 Name:		credentials-control-center
 Version:	0.1.5
-Release:	1
+Release:	2
 License:	LGPL v3 (libaccount-plugin), GPL v3 (panel)
 Group:		Libraries
 #Source0Download: https://launchpad.net/gnome-control-center-signon/
@@ -118,6 +118,9 @@ Summary(pl.UTF-8):	API języka Vala do biblioteki libaccount-plugin
 Group:		X11/Development/Libraries
 Requires:	libaccount-plugin-devel = %{version}-%{release}
 Requires:	vala >= 2:0.15.1
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description -n vala-libaccount-plugin
 Vala API for libaccount-plugin library.
