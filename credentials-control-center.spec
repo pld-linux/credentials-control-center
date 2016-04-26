@@ -7,7 +7,7 @@ Summary:	Ubuntu Online Accounts configuration panel
 Summary(pl.UTF-8):	Panel konfiguracyjny Ubuntu Online Accounts
 Name:		credentials-control-center
 Version:	0.1.5
-Release:	2
+Release:	3
 License:	LGPL v3 (libaccount-plugin), GPL v3 (panel)
 Group:		Libraries
 #Source0Download: https://launchpad.net/gnome-control-center-signon/
@@ -105,6 +105,9 @@ Statyczna biblioteka credentials-control-center.
 Summary:	API documentation for account-plugin library
 Summary(pl.UTF-8):	Dokumentacja API biblioteki account-plugin
 Group:		Documentation
+%if "%{_rpmversion}" >= "5"
+BuildArch:	noarch
+%endif
 
 %description -n libaccount-plugin-apidocs
 API documentation for account-plugin library.
