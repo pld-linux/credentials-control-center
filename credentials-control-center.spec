@@ -7,12 +7,13 @@ Summary:	Ubuntu Online Accounts configuration panel
 Summary(pl.UTF-8):	Panel konfiguracyjny Ubuntu Online Accounts
 Name:		credentials-control-center
 Version:	0.1.5
-Release:	3
+Release:	4
 License:	LGPL v3 (libaccount-plugin), GPL v3 (panel)
 Group:		Libraries
 #Source0Download: https://launchpad.net/gnome-control-center-signon/
 Source0:	https://launchpad.net/gnome-control-center-signon/13.04/%{version}/+download/%{name}-%{version}.tar.xz
 # Source0-md5:	deaa290c89dffee5198f3f0f6f2e1fe1
+Patch0:		%{name}-update.patch
 URL:		https://launchpad.net/gnome-control-center-signon/
 BuildRequires:	glib2-devel >= 1:2.30
 %{?with_gnome_cc:BuildRequires:	gnome-control-center-devel}
@@ -72,6 +73,10 @@ Requires:	libsignon-glib >= 1.8
 %description -n libaccount-plugin
 libaccount-plugin is an auxiliary library which provides support for
 account plugins.
+
+%description -n libaccount-plugin -l pl.UTF-8
+libaccount-plugin to biblioteka pomocnicza zapewniająca obsługę
+wtyczek dla kont.
 
 %package -n libaccount-plugin-devel
 Summary:	Development files for account-plugin library
@@ -133,6 +138,7 @@ API języka Vala do biblioteki libaccount-plugin.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %configure \
