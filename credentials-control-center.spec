@@ -110,9 +110,7 @@ Statyczna biblioteka credentials-control-center.
 Summary:	API documentation for account-plugin library
 Summary(pl.UTF-8):	Dokumentacja API biblioteki account-plugin
 Group:		Documentation
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description -n libaccount-plugin-apidocs
 API documentation for account-plugin library.
@@ -126,9 +124,7 @@ Summary(pl.UTF-8):	API języka Vala do biblioteki libaccount-plugin
 Group:		X11/Development/Libraries
 Requires:	libaccount-plugin-devel = %{version}-%{release}
 Requires:	vala >= 2:0.15.1
-%if "%{_rpmversion}" >= "5"
 BuildArch:	noarch
-%endif
 
 %description -n vala-libaccount-plugin
 Vala API for libaccount-plugin library.
